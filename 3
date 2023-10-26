@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int countDigits(string str, int index, int count) {
+   
+    if (index == str.length()) {
+        return count;
+    }
+
+    if (isdigit(str[index])) {
+        count++;
+    }
+
+    return countDigits(str, index + 1, count);
+}
+
+int main() {
+    string str;
+    cin >> str;
+
+    int result = countDigits(str, 0, 0);
+
+    cout << result << endl;
+
+    return 0;
+}
